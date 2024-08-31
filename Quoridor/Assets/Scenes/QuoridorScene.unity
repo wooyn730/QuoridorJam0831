@@ -1340,8 +1340,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1078111627}
-  - {fileID: 1795832556}
-  - {fileID: 1051957898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4220,17 +4218,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051957897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 410927959}
+  m_Father: {fileID: 1185285239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.05, y: 220}
-  m_SizeDelta: {x: 57.75, y: 55.95}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051957899
 MonoBehaviour:
@@ -4467,7 +4465,11 @@ MonoBehaviour:
   _board: {fileID: 1078111627}
   player1Pos: {x: 0, y: 0}
   player2Pos: {x: 0, y: 0}
-  around: []
+  around:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
 --- !u!1001 &1132107293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4970,7 +4972,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7355574622684980437, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1051957898}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
 --- !u!224 &1185285239 stripped
@@ -7804,7 +7809,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7355574622684980437, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1795832556}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
 --- !u!224 &1708833160 stripped
@@ -8041,17 +8049,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795832555}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 410927959}
+  m_Father: {fileID: 1708833160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.05, y: -251.75}
-  m_SizeDelta: {x: 57.75, y: 55.95}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795832557
 MonoBehaviour:

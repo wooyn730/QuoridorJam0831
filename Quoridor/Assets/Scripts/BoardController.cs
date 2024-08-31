@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class BoardController : MonoBehaviour
 {
     [SerializeField] private Transform _board;
-    private Transform[,] _squares = new Transform[9, 9];
+    private SquareController[,] _squares = new SquareController[9, 9];
     [SerializeField] private Vector2 player1Pos;
     [SerializeField] private Vector2 player2Pos;
     [SerializeField] private Vector2[] around = new Vector2[4];
@@ -38,8 +38,7 @@ public class BoardController : MonoBehaviour
 
             if (newX >= 0 && newX < 9 && newY >= 0 && newY < 9)
             {
-                Image image = _squares[newY, newX].GetComponent<Image>();
-                image.color = new Color(255/255f, 244/255f, 143/255f);
+                _squares[newY, newX].ActiveSquare();
             }
         }
     }
@@ -51,7 +50,7 @@ public class BoardController : MonoBehaviour
             for (int j = 0; j < 9; j++)
             {
                 // Debug.Log(_board.GetChild(i * 9 + j));
-                _squares[i, j] = _board.GetChild(i * 9 + j);
+                _squares[i, j] = _board.GetChild(i * 9 + j).GetComponent<SquareController>();
             }
         }
     }
