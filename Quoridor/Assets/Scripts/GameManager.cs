@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
+    [SerializeField] private UIManager _uiManager;
     [SerializeField] private BoardController _boardController;
     [SerializeField] private PlayerController Player1;
     [SerializeField] private PlayerController Player2;
-    private int turn = 1;
+    private int _turn = 1;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdatePlayerSquare(Vector2 pos)
     {
-        if (turn == 1)
+        if (_turn == 1)
             _boardController.player1Square = _boardController._squares[(int)pos.y, (int)pos.x];
         else
             _boardController.player2Square = _boardController._squares[(int)pos.y, (int)pos.x];
@@ -31,7 +32,8 @@ public class GameManager : MonoBehaviour
 
     public void StartTurn()
     {
-        _boardController.SelectPlayer(turn);
+        _uiManager.ShowCurrectTurn(_turn);
+        _boardController.SelectPlayer(_turn);
     }
 
     public void NextTurn()
@@ -42,14 +44,14 @@ public class GameManager : MonoBehaviour
         // Player에서 호출..??
         _boardController.InactiveAllSquares();
 
-        turn = 3 - turn;
+        _turn = 3 - _turn;
 
         StartTurn();
     }
 
     public PlayerController GetCurrentPlayer()
     {
-        if (turn == 1)
+        if (_turn == 1)
             return Player1;
         else
             return Player2;
