@@ -4,7 +4,7 @@ public class WallBoardController : MonoBehaviour
 {
     // 8*8개의 점을 가지고 있음
     [SerializeField] private Vector3[,] _points = new Vector3[8, 8];
-    private float _offset = 0.3f;
+    private float _offset = 0.5f;
     
     void Start()
     {
