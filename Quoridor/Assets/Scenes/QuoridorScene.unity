@@ -4477,8 +4477,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _board: {fileID: 1078111627}
-  player1Pos: {x: 0, y: 0}
-  player2Pos: {x: 0, y: 0}
+  player1Square: {fileID: 1708833164}
+  player2Square: {fileID: 1451681125}
   around:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -6913,6 +6913,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7355574622684980437, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
   m_PrefabInstance: {fileID: 1444512015}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1451681125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 543760866563638026, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
+  m_PrefabInstance: {fileID: 1185285238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1986175551cb6a443bcf4b6a9a70e84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1455828247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7834,6 +7845,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7355574622684980437, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
   m_PrefabInstance: {fileID: 1708833159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1708833164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 543760866563638026, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
+  m_PrefabInstance: {fileID: 1708833159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1986175551cb6a443bcf4b6a9a70e84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1731372942
 PrefabInstance:
   m_ObjectHideFlags: 0

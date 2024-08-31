@@ -4,8 +4,8 @@ public class BoardController : MonoBehaviour
 {
     [SerializeField] private Transform _board;
     public SquareController[,] _squares = new SquareController[9, 9];
-    [SerializeField] private Vector2 player1Pos;
-    [SerializeField] private Vector2 player2Pos;
+    public SquareController player1Square;
+    public SquareController player2Square;
     [SerializeField] private Vector2[] around = new Vector2[4];
 
     // 보드의 9*9 정보를 가지고 있는다
@@ -17,8 +17,6 @@ public class BoardController : MonoBehaviour
     {
         InitAround();
         AllocateSquares();
-        player1Pos = new Vector2(4, 8);
-        player2Pos = new Vector2(4, 0);
         GameManager.Instance.StartTurn();
     }
 
@@ -36,9 +34,9 @@ public class BoardController : MonoBehaviour
     public void SelectPlayer(int turn)
     {
         if (turn == 1)
-            ActiveSquares(player1Pos);
+            ActiveSquares(player1Square.Pos);
         else
-            ActiveSquares(player1Pos);
+            ActiveSquares(player2Square.Pos);
     }
 
     private void ActiveSquares(Vector2 playerPos)

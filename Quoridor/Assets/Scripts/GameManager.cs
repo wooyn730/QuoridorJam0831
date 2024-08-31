@@ -21,6 +21,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void UpdatePlayerSquare(Vector2 pos)
+    {
+        if (turn == 1)
+            _boardController.player1Square = _boardController._squares[(int)pos.y, (int)pos.x];
+        else
+            _boardController.player2Square = _boardController._squares[(int)pos.y, (int)pos.x];
+    }
+
     public void StartTurn()
     {
         _boardController.SelectPlayer(turn);
