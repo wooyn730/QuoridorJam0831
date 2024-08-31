@@ -3,28 +3,24 @@ using UnityEngine;
 public class WallBoardController : MonoBehaviour
 {
     // 8*8개의 점을 가지고 있음
-    [SerializeField] private GameObject[,] _points = new GameObject[8, 8];
-    private float _offset = 2f;
+    [SerializeField] private Vector3[,] _points = new Vector3[8, 8];
+    private float _offset = 0.3f;
     
     void Start()
     {
         AllocatePoints();
     }
 
-    // 마우스를 드래그앤드롭하면 모든 포인트들을 순회함
-    // 해당 포인트와 특정 거리 이내라면 스냅
-    // 아니면 그냥 행동이 취소됨
-
     public Vector3 GetNearestPoint(Vector3 position)
     {
-        foreach (GameObject point in _points)
+        foreach (Vector3 point in _points)
         {
-            float distance = Vector3.Distance(position, point.transform.position);
+            float distance = Vector3.Distance(position, point);
             Debug.Log(distance);
 
             if (distance < _offset)
             {
-                return point.transform.position;
+                return point;
             }
         }
 
@@ -34,12 +30,18 @@ public class WallBoardController : MonoBehaviour
     private void AllocatePoints()
     {
         int size = 8;
+        int gap = 105;
+
+        Vector3 originPoint = new Vector3(-368, 368, 0);
+
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                _points[i, j] = transform.GetChild(i * size + j).gameObject;
-                // _points[i, j].Pos = new Vector2(j, i);
+                Vector3 localPoint = new Vector3(originPoint.x + gap * i, originPoint.y - gap * j, 0);
+                Debug.Log(localPoint);
+                _points[i, j] = transform.TransformPoint(localPoint);
+                Debug.Log(_points[i, j]);
             }
         }
     }

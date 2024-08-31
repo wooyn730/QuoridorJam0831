@@ -8,7 +8,6 @@ public class Wall : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     private Vector3 _initPos;
     private Vector3 _offset;
-    public bool IsDragging = false;
     //private GameObject clonedObject;
 
     private void Start()
@@ -25,7 +24,6 @@ public class Wall : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         //clonedObject = Instantiate(gameObject, transform.position, transform.rotation);
         Debug.Log("시작이염");
         _offset = transform.parent.position - GetMouseWorldPosition();
-        IsDragging = true;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -35,14 +33,21 @@ public class Wall : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        IsDragging = false;
-        transform.parent.position = _initPos;
+        Vector3 newPos = _wallBoardController.GetNearestPoint(transform.parent.position);
+        if (newPos == new Vector3(-5000, 0, 0))
+        {
+            transform.parent.position = _initPos;
+        }
+        else
+        {
+            transform.parent.position = newPos;
+        }
     }
 
     private Vector3 GetMouseWorldPosition()
     {
         Vector3 mouseScreenPosition = Input.mousePosition;
-        mouseScreenPosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
+        mouseScreenPosition.z = Camera.main.WorldToScreenPoint(transform.parent.position).z; // z값을 설정해줘야 올바르게 변환됨
         return Camera.main.ScreenToWorldPoint(mouseScreenPosition);
     }
 
