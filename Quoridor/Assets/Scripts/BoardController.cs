@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BoardController : MonoBehaviour
 {
-    [SerializeField] private Transform _board;
     public Square[,] _squares = new Square[9, 9];
     public Square player1Square;
     public Square player2Square;
@@ -71,7 +70,7 @@ public class BoardController : MonoBehaviour
             for (int j = 0; j < size; j++)
             {
                 // Debug.Log(_board.GetChild(i * 9 + j));
-                _squares[i, j] = _board.GetChild(i * size + j).GetComponent<Square>();
+                _squares[i, j] = transform.GetChild(i * size + j).GetComponent<Square>();
                 _squares[i, j].Pos = new Vector2(j, i);
             }
         }
