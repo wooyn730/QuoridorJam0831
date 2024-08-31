@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4281,8 +4282,9 @@ GameObject:
   - component: {fileID: 1078111629}
   - component: {fileID: 1078111628}
   - component: {fileID: 1078111630}
+  - component: {fileID: 1078111631}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4450,6 +4452,22 @@ MonoBehaviour:
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1078111631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078111626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab51f1f4ea8ba744795028bc8e506a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _board: {fileID: 1078111627}
+  player1Pos: {x: 0, y: 0}
+  player2Pos: {x: 0, y: 0}
+  around: []
 --- !u!1001 &1132107293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5784,6 +5802,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1078111627}
     m_Modifications:
+    - target: {fileID: 966053013581181932, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966053013581181932, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966053013581181932, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7355574622684980437, guid: 58533f4fafe4b2146bf13f8192b2138c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
