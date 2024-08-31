@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BoardController : MonoBehaviour
 {
     [SerializeField] private Transform _board;
-    private SquareController[,] _squares = new SquareController[9, 9];
+    public SquareController[,] _squares = new SquareController[9, 9];
     [SerializeField] private Vector2 player1Pos;
     [SerializeField] private Vector2 player2Pos;
     [SerializeField] private Vector2[] around = new Vector2[4];
@@ -20,12 +19,26 @@ public class BoardController : MonoBehaviour
         AllocateSquares();
         player1Pos = new Vector2(4, 8);
         player2Pos = new Vector2(4, 0);
-        Player1Turn();
+        GameManager.Instance.StartTurn();
     }
 
-    private void Player1Turn()
+    public void InactiveAllSquares()
     {
-        ActiveSquares(player1Pos);
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                _squares[i, j].InactiveSquare();
+            }
+        }
+    }
+
+    public void SelectPlayer(int turn)
+    {
+        if (turn == 1)
+            ActiveSquares(player1Pos);
+        else
+            ActiveSquares(player1Pos);
     }
 
     private void ActiveSquares(Vector2 playerPos)
@@ -51,6 +64,7 @@ public class BoardController : MonoBehaviour
             {
                 // Debug.Log(_board.GetChild(i * 9 + j));
                 _squares[i, j] = _board.GetChild(i * 9 + j).GetComponent<SquareController>();
+                _squares[i, j].Pos = new Vector2(j, i);
             }
         }
     }
