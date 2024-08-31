@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image)), RequireComponent(typeof(Button))]
-public class SquareController : MonoBehaviour
+public class Square : MonoBehaviour
 {
     public Vector2 Pos;
     private Image _img;

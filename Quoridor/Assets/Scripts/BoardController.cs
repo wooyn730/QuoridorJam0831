@@ -3,9 +3,9 @@ using UnityEngine;
 public class BoardController : MonoBehaviour
 {
     [SerializeField] private Transform _board;
-    public SquareController[,] _squares = new SquareController[9, 9];
-    public SquareController player1Square;
-    public SquareController player2Square;
+    public Square[,] _squares = new Square[9, 9];
+    public Square player1Square;
+    public Square player2Square;
     [SerializeField] private Vector2[] around = new Vector2[4];
 
     // 보드의 9*9 정보를 가지고 있는다
@@ -15,7 +15,6 @@ public class BoardController : MonoBehaviour
 
     private void Start()
     {
-        InitAround();
         AllocateSquares();
         GameManager.Instance.StartTurn();
     }
@@ -66,22 +65,15 @@ public class BoardController : MonoBehaviour
 
     private void AllocateSquares()
     {
-        for (int i = 0; i < 9; i++)
+        int size = 9;
+        for (int i = 0; i < size; i++)
         {
-            for (int j = 0; j < 9; j++)
+            for (int j = 0; j < size; j++)
             {
                 // Debug.Log(_board.GetChild(i * 9 + j));
-                _squares[i, j] = _board.GetChild(i * 9 + j).GetComponent<SquareController>();
+                _squares[i, j] = _board.GetChild(i * size + j).GetComponent<Square>();
                 _squares[i, j].Pos = new Vector2(j, i);
             }
         }
-    }
-
-    private void InitAround()
-    {
-        around[0] = new Vector2(-1, 0);
-        around[1] = new Vector2(1, 0);
-        around[2] = new Vector2(0, -1);
-        around[3] = new Vector2(0, 1);
     }
 }
