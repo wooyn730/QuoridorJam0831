@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class BoardController : MonoBehaviour
 {
@@ -49,6 +49,16 @@ public class BoardController : MonoBehaviour
 
             if (newX >= 0 && newX < 9 && newY >= 0 && newY < 9)
             {
+                if (_squares[newY, newX].transform.childCount != 0)
+                {
+                    // 상대가 해당 방향에 있으면 한 칸 더
+                    newX += (int)around[i].x;
+                    newY += (int)around[i].y;
+
+                    if (!(newX >= 0 && newX < 9 && newY >= 0 && newY < 9))
+                        continue;
+                }
+
                 _squares[newY, newX].ActiveSquare();
             }
         }
