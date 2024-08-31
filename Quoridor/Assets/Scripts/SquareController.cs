@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image)), RequireComponent(typeof(Button))]
@@ -16,17 +16,17 @@ public class SquareController : MonoBehaviour
 
     public void ActiveSquare()
     {
-        // »ö º¯°æ
-        // TODO: »ö º¯°æÀ» ¹öÆ° È°¼ºÈ­
+        // ìƒ‰ ë³€ê²½
+        // TODO: ìƒ‰ ë³€ê²½ì„ ë²„íŠ¼ í™œì„±í™”
         _img.color = new Color(255 / 255f, 244 / 255f, 143 / 255f);
-        // ¹öÆ° È°¼ºÈ­
+        // ë²„íŠ¼ í™œì„±í™”
         _btn.interactable = true;
     }
 
     public void InactiveSquare()
     {
         _img.color = new Color(1f, 1f, 1f);
-        // ¹öÆ° È°¼ºÈ­
+        // ë²„íŠ¼ í™œì„±í™”
         _btn.interactable = false;
     }    
 
@@ -34,8 +34,8 @@ public class SquareController : MonoBehaviour
     {
         GameManager.Instance.GetCurrentPlayer().Move(Pos);
         GameManager.Instance.NextTurn();
-        // ¹öÆ°ÀÌ ´­¸®¸é ÇÃ·¹ÀÌ¾î¸¦ ³» ÀÚ½ÄÀ¸·Î °¡Á®¿À°í ÅÏÀ» ³Ñ±ä´Ù.
-        // ÅÏÀ» ³Ñ±â¸é ¸ğµç ¹öÆ°µéÀ» ÃÊ±âÈ­
-        // ÇØ´çµÇ´Â ¹öÆ° È°¼ºÈ­
+        // ë²„íŠ¼ì´ ëˆŒë¦¬ë©´ í”Œë ˆì´ì–´ë¥¼ ë‚´ ìì‹ìœ¼ë¡œ ê°€ì ¸ì˜¤ê³  í„´ì„ ë„˜ê¸´ë‹¤.
+        // í„´ì„ ë„˜ê¸°ë©´ ëª¨ë“  ë²„íŠ¼ë“¤ì„ ì´ˆê¸°í™”
+        // í•´ë‹¹ë˜ëŠ” ë²„íŠ¼ í™œì„±í™”
     }
 }

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class BoardController : MonoBehaviour
 {
@@ -8,10 +8,10 @@ public class BoardController : MonoBehaviour
     public SquareController player2Square;
     [SerializeField] private Vector2[] around = new Vector2[4];
 
-    // º¸µåÀÇ 9*9 Á¤º¸¸¦ °¡Áö°í ÀÖ´Â´Ù
-    // ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡¸¦ È®ÀÎÇÑ´Ù
-    // ÇÃ·¹ÀÌ¾î°¡ ÀÌµ¿ °¡´ÉÇÑ º¸µåÀÇ »öÀ» ¹Ù²ãÁØ´Ù
-    // ´©¸£¸é ÇÃ·¹ÀÌ¾î°¡ ÇØ´ç À§Ä¡·Î ÀÌµ¿ÇÑ´Ù
+    // ë³´ë“œì˜ 9*9 ì •ë³´ë¥¼ ê°€ì§€ê³  ìˆëŠ”ë‹¤
+    // í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜ë¥¼ í™•ì¸í•œë‹¤
+    // í”Œë ˆì´ì–´ê°€ ì´ë™ ê°€ëŠ¥í•œ ë³´ë“œì˜ ìƒ‰ì„ ë°”ê¿”ì¤€ë‹¤
+    // ëˆ„ë¥´ë©´ í”Œë ˆì´ì–´ê°€ í•´ë‹¹ ìœ„ì¹˜ë¡œ ì´ë™í•œë‹¤
 
     private void Start()
     {
@@ -41,7 +41,7 @@ public class BoardController : MonoBehaviour
 
     private void ActiveSquares(Vector2 playerPos)
     {
-        // °¥ ¼ö ÀÖ´Â Ä­ È°¼ºÈ­
+        // ê°ˆ ìˆ˜ ìˆëŠ” ì¹¸ í™œì„±í™”
         for (int i=0; i<around.Length; i++)
         {
             int newX = (int)(playerPos.x + around[i].x);

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,10 +36,10 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
-        // °ÔÀÓÀÇ ½ÂÆĞ °Ë»ç
-        // ¾È ³¡³µ´Ù¸é ÅÏ ³Ñ±â±â
+        // ê²Œì„ì˜ ìŠ¹íŒ¨ ê²€ì‚¬
+        // ì•ˆ ëë‚¬ë‹¤ë©´ í„´ ë„˜ê¸°ê¸°
 
-        // Player¿¡¼­ È£Ãâ..??
+        // Playerì—ì„œ í˜¸ì¶œ..??
         _boardController.InactiveAllSquares();
 
         turn = 3 - turn;

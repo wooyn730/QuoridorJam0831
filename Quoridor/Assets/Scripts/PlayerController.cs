@@ -1,4 +1,4 @@
-using System.Diagnostics.CodeAnalysis;
+ï»¿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move(Vector2 pos)
     {
-        // º¸µå Á¤º¸¸¦ ´Ù ¾Ë°íÀÖ¾î¾ß ÇÔ?
+        // ë³´ë“œ ì •ë³´ë¥¼ ë‹¤ ì•Œê³ ìžˆì–´ì•¼ í•¨?
         transform.SetParent(_boardController._squares[(int)pos.y, (int)pos.x].transform);
         transform.localPosition = new Vector3(0, 0, 0);
         GameManager.Instance.UpdatePlayerSquare(pos);
