@@ -14,20 +14,12 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
-    }
-
-    public void UpdatePlayerSquare(Vector2 pos)
-    {
-        if (_turn == 1)
-            _boardController.player1Square = _boardController._squares[(int)pos.y, (int)pos.x];
-        else
-            _boardController.player2Square = _boardController._squares[(int)pos.y, (int)pos.x];
     }
 
     public void StartTurn()
@@ -36,17 +28,48 @@ public class GameManager : MonoBehaviour
         _boardController.SelectPlayer(_turn);
     }
 
-    public void NextTurn()
+    public void NextTurn(Vector2 pos)
     {
-        // 게임의 승패 검사
-        // 안 끝났다면 턴 넘기기
-
         // Player에서 호출..??
         _boardController.InactiveAllSquares();
 
+        // 게임의 승패 검사
+        if (!UpdatePlayerSquare(pos))
+            return;
+
+        // 안 끝났다면 턴 넘기기
         _turn = 3 - _turn;
 
         StartTurn();
+    }
+
+    private bool UpdatePlayerSquare(Vector2 pos)
+    {
+        if (_turn == 1)
+        {
+            if ((int)pos.y == 0)
+            {
+                ShowResults(1);
+                return false;
+            }
+            _boardController.player1Square = _boardController._squares[(int)pos.y, (int)pos.x];
+        }
+        else if (_turn == 2)
+        {
+            if ((int)pos.y == 8)
+            {
+                ShowResults(2);
+                return false;
+            }
+            _boardController.player2Square = _boardController._squares[(int)pos.y, (int)pos.x];
+        }
+        return true;
+    }
+
+    private void ShowResults(int player)
+    {
+        Debug.Log("Player"+player+" Win");
+        _uiManager.PlayerWin(player);
     }
 
     public PlayerController GetCurrentPlayer()

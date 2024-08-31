@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image)), RequireComponent(typeof(Button))]
@@ -33,7 +33,6 @@ public class SquareController : MonoBehaviour
     public void MovePlayerHere()
     {
         GameManager.Instance.GetCurrentPlayer().Move(Pos);
-        GameManager.Instance.NextTurn();
         // 버튼이 눌리면 플레이어를 내 자식으로 가져오고 턴을 넘긴다.
         // 턴을 넘기면 모든 버튼들을 초기화
         // 해당되는 버튼 활성화
